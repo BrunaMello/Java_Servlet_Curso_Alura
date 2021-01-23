@@ -21,6 +21,8 @@ public class OiMundoServlet extends HttpServlet {
 		out.println("Testando servlet! :P");
 		out.println("</body>");
 		out.println("</html>");
+		
+		System.out.print("Testando Servlet no terminal!");
 	}
 
 }
