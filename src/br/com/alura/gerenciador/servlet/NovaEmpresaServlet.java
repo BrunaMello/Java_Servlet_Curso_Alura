@@ -23,12 +23,27 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		String nomeEmpresa = request.getParameter("nome"); //retorna sempre uma string!
 		
+		//criando uma empresa 
+		Empresa empresa = new Empresa();
+		
+		//setando o nome da empresa
+		empresa.setNome(nomeEmpresa);
+		
+		// criando banco 
+		Banco banco = new Banco();
+		
+		//adicionando empresa no banco
+		banco.adiciona(empresa);
+		
+		
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
 		
 		//service atende get e post 
-		//doPost somente post 
-		//goGet somente get
+		//doPost atende somente post 
+		//goGet atende somente get
 	}
+	
+	
 
 }
