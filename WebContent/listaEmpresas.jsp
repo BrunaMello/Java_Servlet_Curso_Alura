@@ -16,9 +16,19 @@
 </head>
 <body>
 
-	<h2>Lista Empresas Cadastradas</h2>
-	
-	<!-- fazendo a lista usando a biblioteca jstl -->
+	<h2>Cadastro de Empresas</h2>
+		
+		<!-- if para caso ter cadastrado a empresa no formulario -->
+		<c:if test="${ not empty empresa }">
+			A empresa ${ empresa } cadastrada com sucesso!
+		</c:if>
+		
+		<!-- if para caso nao ter cadastrado nenhuma empresa no formulario ou quando acessar essa pagina diretamente -->
+		<c:if test="${ empty empresa }">
+			Nenhuma empresa cadastrada ainda!
+		</c:if>
+		
+		<!-- fazendo a lista usando a biblioteca jstl -->
 	<ul>
 		<c:forEach items="${empresas}" var="empresa"> <!-- expression languages são para usar junto com as taglib  -->
 			
