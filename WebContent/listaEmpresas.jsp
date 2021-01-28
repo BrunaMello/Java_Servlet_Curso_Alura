@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="utf-8"%>
 
-<!-- //fazendo o import -->
+<!-- //fazendo o import do servlet -->
 <%@ page import="java.util.List, br.com.alura.gerenciador.servlet.Empresa" %>
 
 <!-- Importando a taglib jstl -->
@@ -29,13 +29,21 @@
 		</c:if>
 		
 		<!-- fazendo a lista usando a biblioteca jstl -->
-	<ul>
-		<c:forEach items="${empresas}" var="empresa"> <!-- expression languages são para usar junto com as taglib  -->
-			
-			<li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/> </li>
 		
-		</c:forEach>
-	</ul>
+		Lista de empresas: <br />
+		
+		<ul>
+			<c:forEach items="${empresas}" var="empresa"> <!-- expression languages são para usar junto com as taglib  -->
+				
+				<li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/> 
+					<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remover</a>
+					<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">Alterar</a>
+					
+				
+				</li>
+			
+			</c:forEach>
+		</ul>
 		
 </body>
 </html>

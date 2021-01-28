@@ -25,7 +25,7 @@ public class ListaEmpresasServlet extends HttpServlet {
 		Banco banco = new Banco();
 		List<Empresa> lista = banco.getEmpresas();
 		
-		//pindurando a lista no request 
+		//pendurando a lista no request 
 		request.setAttribute("empresas", lista);
 		
 		//endereco para onde o dispachador vai

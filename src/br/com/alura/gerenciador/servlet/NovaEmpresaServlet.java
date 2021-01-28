@@ -23,17 +23,18 @@ public class NovaEmpresaServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Cadastrando Empresa");
+		System.out.println("Cadastrando nova Empresa");
 		
 		String nomeEmpresa = request.getParameter("nome"); //retorna sempre uma string!
-		String dataEmpresa = request.getParameter("dataEmpresa"); //retorna uma string por isso tem que fazer o parsing
+		String paramDataEmpresa = request.getParameter("data"); //retorna uma string por isso tem que fazer o parsing, 
+		//esse get parameter data esta pegando o nome do form jsp
 		
 		
 		//transformando string em date (parsing)
 		Date dataAbertura = null;
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			dataAbertura = sdf.parse(dataEmpresa);
+			dataAbertura = sdf.parse(paramDataEmpresa);
 		} catch (ParseException e) {
 			throw new ServletException(e);
 		}
@@ -53,7 +54,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		//adicionando empresa no banco
 		banco.adiciona(empresa);
 		
-		//pendurar o nome da empresa na requisicao
+		//pendurar o nome da empresa na requisicao, nao vai funcionar porque a requisicao so vale para o primeiro servlet 
 		request.setAttribute("empresa" /*serve como apelido que vai usar no jsp*/ , empresa.getNome());
 		
 		//redirecionado para outra url e devolvendo uma resposta a partir do response(lado cliente)
