@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 
 <!-- //fazendo o import do servlet -->
-<%@ page import="java.util.List, br.com.alura.gerenciador.servlet.Empresa" %>
+<%@ page import="java.util.List,br.com.alura.gerenciador.modelo.Empresa" %>
 
 <!-- Importando a taglib jstl -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
