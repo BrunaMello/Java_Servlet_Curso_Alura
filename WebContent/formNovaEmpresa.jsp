@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!-- declarando a variavel para o endereco da pagina -->
-<c:url value="/novaEmpresa" var="linkServletNovaEmpresa"/>
+<c:url value="/entrada" var="linkEntradaServlet"/>
 
 <!DOCTYPE html>
 <html>
@@ -14,10 +14,11 @@
 <body>
 
 	<!-- chamando a variavel dde endereco -->
-	<form action="${ linkServletNovaEmpresa }" method="POST">
+	<form action="${ linkEntradaServlet }" method="POST">
 		
 		Nome : <input type="text" name="nome" />
 		Data Abertura : <input type="text" name="data" />
+		<input type="hidden" name="acao" value="NovaEmpresa">
 		
 		<input type="submit">
 		

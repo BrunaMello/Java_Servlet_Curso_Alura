@@ -36,10 +36,9 @@
 			<c:forEach items="${empresas}" var="empresa"> <!-- expression languages são para usar junto com as taglib  -->
 				
 				<li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/> 
-					<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remover</a>
-					<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">Alterar</a>
+					<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">Remover</a>
+					<a href="/gerenciador/entrada?acao=MostraEmpresas&id=${empresa.id}">Alterar</a>
 					
-				
 				</li>
 			
 			</c:forEach>
