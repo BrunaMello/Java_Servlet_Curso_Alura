@@ -10,6 +10,7 @@ public class Banco {
 	
 	//criando um obj do tipo empresa para adicionar todas as empresas criadas ao banco
 	private static List<Empresa> lista = new ArrayList<>();
+	private static List<Usuario> listaUsuarios = new ArrayList<>();
 	//simulando uma chave primaria de um banco de dados
 	private static Integer chaveSequencial = 1;
 	
@@ -26,6 +27,19 @@ public class Banco {
 		
 		lista.add(empresa);
 		lista.add(empresa2);
+		
+		Usuario user1 = new Usuario();
+		user1.setLogin("Bruna");
+		user1.setSenha("1234");
+		
+		Usuario user2 = new Usuario();
+		user2.setLogin("Marcelo");
+		user2.setSenha("4321");
+		
+		listaUsuarios.add(user1);
+		listaUsuarios.add(user2);
+		
+		
 	}
 
 	public void adiciona(Empresa empresa) {
@@ -73,6 +87,16 @@ public class Banco {
 		for (Empresa empresa : lista) {
 			if(empresa.getId() == id) {
 				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+
+		for(Usuario usuario : listaUsuarios) {
+			if(usuario.ehIgual(login, senha)) {
+				return usuario;
 			}
 		}
 		return null;
