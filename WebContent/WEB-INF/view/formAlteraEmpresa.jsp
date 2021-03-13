@@ -13,6 +13,9 @@
 </head>
 <body>
 
+	<c:import url="logoutParcial.jsp"></c:import>
+	 
+	
 	<!-- chamando a variavel dde endereco -->
 	<form action="${ linkEntradaServlet }" method="POST">
 

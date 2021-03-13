@@ -77,7 +77,6 @@ public class Banco {
 			Empresa emp = it.next();
 			
 			if(emp.getId() == id) {
-				it.;
 			}
 		}
 		

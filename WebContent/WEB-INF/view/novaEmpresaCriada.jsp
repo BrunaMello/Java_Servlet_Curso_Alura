@@ -11,6 +11,9 @@
 	</head>
 	<body>
 	
+		<c:import url="logoutParcial.jsp"></c:import>
+	 
+		
 		<h2>Cadastro de Empresas</h2>
 		
 		<!-- if para caso ter cadastrado a empresa no formulario -->
